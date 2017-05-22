@@ -1,0 +1,35 @@
+.ant-row,.ant-row-flex{
+	margin-bottom: 10px;
+	text-align: center;
+}
+/*.gutter-example .gutter-row > div {
+  background: transparent;
+  border: 0;
+}*/
+.gutter-box {
+  background: #00A0E9;
+  padding: 5px 0;
+}
+.ant-row > div[class^="ant-col"]:nth-child(odd), .ant-row-flex > div[class^="ant-col"]:nth-child(odd) {
+	background: rgba(0,160,233,.7);
+}
+.ant-row > div[class^="ant-col"]:nth-child(even), .ant-row-flex > div[class^="ant-col"]:nth-child(even) {
+	background: #00a0e9;
+}
+
+#components-grid-demo-playground [class^="ant-col-"] {
+  background: transparent;
+  border: 0;
+}
+#components-grid-demo-playground [class^="ant-col-"] > div {
+  background: #00A0E9;
+  height: 120px;
+  line-height: 120px;
+  font-size: 13px;
+}
+#components-grid-demo-playground pre {
+  background: #f9f9f9;
+  border-radius: 6px;
+  font-size: 13px;
+  padding: 8px 16px;
+}

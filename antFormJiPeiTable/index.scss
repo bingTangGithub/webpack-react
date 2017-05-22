@@ -1,0 +1,21 @@
+/*.ant-modal-footer {
+	button: nth-child(1) {
+		display: none;
+	}
+
+	button: nth-child(2) {
+		backgroundColor: #FFE000;
+		color: rgba(0, 0, 0, 0.65);
+		border: none;
+	}
+}*/
+
+.ant-confirm-btns button:nth-child(1) span{
+		/*display: none;*/
+}
+
+.ant-confirm-btns button:nth-child(2) {
+		backgroundColor: #FFE000 !important;
+		color: rgba(0, 0, 0, 0.65) !important;
+		border: none !important;
+}
