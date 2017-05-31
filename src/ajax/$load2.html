@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" id="send" value="Ajax" />
+	<div>已有评论：</div>
+	<div id="resText"></div>
+
+	<!-- <input type="button" value="Ajax提交" id="ajaxSend" /> -->
+	<script type="text/javascript" src="../build65.js"></script>
+
+	<script type="text/javascript">
+    var message = function(data) {
+        // console.log((data[1].title));
+    };
+
+//      message([
+//     {"id":"1", "title":"天津新闻联播，雷人搞笑的男主持人"},
+//  	{"id":"2", "title":"楼市告别富得流油 专家:房价下跌是大概率事件"},
+// 	{"id":"3", "title":"法国人关注时事 八成年轻人每天阅读新闻"},
+// 	{"id":"4", "title":"新闻中的历史,历史中的新闻"},
+// 	{"id":"5", "title":"东阳新闻20140222"},
+// 	{"id":"6", "title":"23个职能部门要增加新闻发布频次"},
+// 	{"id":"7", "title":"《贵州新闻联播》 中国美丽乡村"},
+// 	{"id":"8", "title":"朝韩离散家属团聚首轮活动结束"},
+// 	{"id":"9", "title":"索契冬奥会一天曝出两例兴奋剂事件"},
+// 	{"id":"10", "title":"今天中国多地仍将出现中度霾"}
+// ]);
+ 	</script>
+ 	<!-- JS脚本植入的方式实现跨域 -->
+	<script type="text/javascript" src="./message.js"></script>   
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	 //    var messagetow = function(data){
+	 //        alert(data);
+		// };
+	 //    var url = "http://106.14.181.21:8008/shop/query?callback=messagetow";
+	 //    var script = document.createElement('script'); 
+	 //    script.setAttribute('src', url); 
+	 //    document.getElementsByTagName('head')[0].appendChild(script);
+
+	 $.get('http://localhost:3000/getjson/frontEndInfo', function(res){
+	 	console.log(res);
+	 })
+   </script>
+	
+</body>
+</html>
