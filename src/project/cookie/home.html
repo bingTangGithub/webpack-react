@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body onLoad="checkCookie()">
+
+	<script type="text/javascript">
+
+		function setCookie(c_name,value,expiredMinutes){
+			var exdate=new Date();
+
+			// exdate.setDate(exdate.getDate()+ parseInt(expiredays)); // getDate() 方法可返回月份的某一天
+			 
+			exdate.setTime(exdate.getTime()+parseInt(expiredMinutes*60*1000)); // getDate() 方法可返回月份的某一天
+    		
+    		console.log('有效期最后：', new Date().getTime()+parseInt(expiredMinutes*60*1000));
+
+			document.cookie=c_name+ "=" +escape(value)+
+			((expiredMinutes==null) ? "" : ";expires="+exdate.toGMTString());
+
+			console.log('setted document.cookie：：：', document.cookie);
+
+			// console.log('被赋的值：：：', c_name+ "=" +escape(value)+
+			// ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())+
+			// na + "=" + escape(naval));
+		}
+
+		setCookie('name','wxl',2);
+
+		function getCookie(c_name){
+			if (document.cookie.length>0){
+			  c_start=document.cookie.indexOf(c_name + "=")
+			  if (c_start!=-1){ 
+			    c_start=c_start + c_name.length+1 
+			    c_end=document.cookie.indexOf(";",c_start)
+			    if (c_end==-1) c_end=document.cookie.length
+			    return unescape(document.cookie.substring(c_start,c_end))
+			    } 
+			  }
+			return ""
+		}
+
+		function checkCookie(username){
+			username=getCookie('username');
+
+			if (username!=null && username!="")
+			  {alert('Welcome again '+username+'!')}
+			else 
+			  {
+			  username=prompt('Please enter your name:',"")
+			  if (username!=null && username!="")
+			    {
+			    setCookie('username',username,1);
+			    }
+			  }
+		}
+
+		function deleteCookie (name) {
+		    if (getCookie(name)) {
+		      document.cookie = name + '=' +
+		      '; expires=Thu, 01-Jan-1970 00:00:01 GMT';
+		    }
+		}
+
+	</script>
+<script type="text/javascript" src="../../build68.js"></script>
+</body>
+</html>

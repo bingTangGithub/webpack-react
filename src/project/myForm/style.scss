@@ -1,0 +1,103 @@
+*{  
+	margin: 0px;
+	padding: 0px;
+}
+.center {
+	position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+}
+
+.divContent{
+	background-color: #303a40;
+	padding: 0px 10px 100px;
+  .register{
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+	form{
+	  width: 500px;
+		padding: 20px 0px;
+		border: 1px  solid green;
+		background: #fff;
+		ul {
+			li{
+			  width: 500px;
+				padding-bottom: 20px;
+			  list-style: none;
+			  .red{
+			  	color: red;
+			  	padding-right: 10px;
+			  }
+			  label{
+				  display: inline-block;
+				  width: 160px;
+				  text-align: right;
+				  padding-right: 10px;
+			  }
+			  input{
+			    display: inline-block;
+			    width: 300px;
+			    height: 30px;
+			    text-indent:1em;
+			    border: 1px solid grey;
+			  }
+			  input[name='verification']{
+			    width: 150px;
+			  }
+			  .errorC{ 
+			    border: 1px solid red; 
+			  }
+			  .checkedC{
+	        border: 1px solid #1ece6d;
+			  }
+			  .error{
+			    display: block;
+			    height: 12px;
+			    color: red;
+			    font-size: 12px;
+			    margin-left: 172px;
+			  }
+			  .yzm{
+			    display: inline-block;
+			    width: 128px;
+	        height: 36px;
+	        line-height: 36px;
+	        color: #fff;
+	        text-align: center;
+			    background: #ff7200;
+			    margin-left: 18px;
+			  }
+			}
+			li:last-child{
+				label{
+					width: 500px;
+			    margin: 0 auto;
+			    display: inline-block;
+				  text-align: center;
+				}
+			}
+		}
+		.sublimt{
+		  display: block;
+		  width: 300px;
+		  height: 40px;
+		  line-height: 40px;
+		  font-size: 25px;
+		  text-align: center;
+		  margin: 0 auto;
+		  background-color: rgb(255, 109, 11);
+		  outline: none;
+		  border: none;
+		  font-weight: bold;
+		  color: #fff;
+		}
+ }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <button id="adom" class="getType">自我介绍接口</button> -->
+	<button id="adom" class="postType">请求前端人员信息接口</button>
+	<script type="text/javascript" src="../commonTool/jquery.2.1.4.min.js"></script>
+	<script type="text/javascript">
+
+ 	// 访问接口必须是服务器上的才能访问，本地文件夹中的不能
+ 	
+ 	
+	// $(".getType").on('click',function(e){
+	// 		console.log("本地请求接口");
+	// 		$.ajax({
+	// 			url:'http://localhost:3008/postjson',
+	// 			type:'post',
+	// 			dataType: 'json',
+	// 			data:{
+	// 				url: 'frontEndInfo'
+	// 			},
+	// 			success:function(data){
+	// 				console.log('接口的数据 data:', data);
+	// 			},
+	// 			error:function(){
+	// 				alert("出错了")
+	// 			}
+	// 		})
+	// })
+
+	$(".postType").on('click',function(e){
+			console.log("本地请求接口");
+			$.ajax({
+				url:'http://localhost:3008/postjson',
+				type:'post',
+				dataType: 'json',
+				data:{
+					url: 'frontEndInfo'
+				},
+				success:function(data){
+					console.log('接口的数据 data:', data);
+				},
+				error:function(){
+					alert("出错了")
+				}
+			})
+		})
+	</script>
+</body>
+</html>
