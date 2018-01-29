@@ -12,5 +12,5 @@ ReactDOM.render(
         document.getElementById('example')
       );
 
-//ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
-//上面代码将一个 h1 标题，插入 example 节点
+// ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
+// 上面代码将一个 h1 标题，插入 example 节点

@@ -17,8 +17,8 @@ class CurrentForm extends Component {
     this.state = {
       submitButtonBoolean: false,  
       submitButtonBoolean2: false,  
-   }
- }
+    }
+  }
 
   handleExpendTypeChange = (value) => {
     // debugger;
@@ -27,10 +27,10 @@ class CurrentForm extends Component {
 	  })
   }
 
-   handleExpendTypeChange2 = (value) => {
+  handleExpendTypeChange2 = (value) => {
     // debugger;
     this.setState({ 
-        submitButtonBoolean2: true,
+      submitButtonBoolean2: true,
     })
   }
 
@@ -47,7 +47,7 @@ class CurrentForm extends Component {
               wrapperCol = {{ span: 8 }}
           >
               {getFieldDecorator('expendType', {
-                  getValueFromEvent:  this.handleExpendTypeChange,
+                getValueFromEvent:  this.handleExpendTypeChange,
               })(
                   <Select>
                     <Option value='采购'>采购</Option>
@@ -57,9 +57,9 @@ class CurrentForm extends Component {
           </FormItem>
        
       <Select onChange = {this.handleExpendTypeChange2}>
-        <Option selected value="">请选择</Option>
-        <Option value="male">采购</Option>
-        <Option value="female">维修</Option>
+        <Option selected value=''>请选择</Option>
+        <Option value='male'>采购</Option>
+        <Option value='female'>维修</Option>
       </Select>
      </Form>
     )

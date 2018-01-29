@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import PropTypes from 'prop-types';
-import Util from '../commonTool/extend/Util.jsx';
 
 import { Form, Select, Input, Button, Modal, InputNumber } from 'antd';
 const FormItem = Form.Item;
@@ -181,7 +180,7 @@ class CurrentForm extends Component {
   	console.log('刚设submitButtonBoolean:', submitButtonBoolean);
   	let result = expendTypeFormItem[0].options[0].value;
 
-  	if(value === result) { //选择采购
+  	if (value === result) { // 选择采购
   		currentFormItemData = buyFormItemData;
   		this.genQuantityInput(quantityInputSize);
   	} else {
@@ -198,8 +197,8 @@ class CurrentForm extends Component {
   	return value;
   }
 
-	genQuantityInput = (value) => {
-		let {
+  genQuantityInput = (value) => {
+    let {
 			formItemCol: {
 				labelCol,
 				wrapperCol,
@@ -211,7 +210,7 @@ class CurrentForm extends Component {
     let form = this.props.form; 
     let inputLen = listQuantityInput.length;
 
-    if(value < inputLen) {
+    if (value < inputLen) {
     	listQuantityInput.length = value;
     } else {
     	for (let i = inputLen; i < value; i++) { 
@@ -224,14 +223,14 @@ class CurrentForm extends Component {
 			        	<Input />
 			        </FormItem>
 			  );
-      }
+    }
     }
     
     this.setState({
 	      listQuantityInput,
 	  })
     return listQuantityInput;
-	}
+  }
 
   genFormItem = (current) => {
   	const  { getFieldDecorator } = this.props.form;
@@ -280,7 +279,7 @@ class CurrentForm extends Component {
   	});
   }
 
-	handleSubmit = (e) => {
+  handleSubmit = (e) => {
     let form = this.props.form;
     let { purchaseItem } = this.state;
     e.preventDefault();
@@ -291,7 +290,7 @@ class CurrentForm extends Component {
         this.showConfirm(result);
       }
     });
-	}
+  }
 	      /**
  * [提交确认的提示弹窗]
  * @return {[type]} [description]
@@ -374,7 +373,7 @@ class CurrentForm extends Component {
         
       </Form>
 	  );
-  }
+ }
 
 }
 

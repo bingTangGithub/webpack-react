@@ -1,5 +1,5 @@
-var add = require('./add.js');
-var expect = require('chai').expect;
+let add = require('./add.js');
+let expect = require('chai').expect;
 
 // 测试脚本里面应该包括一个或多个describe块，每个describe块应该包括一个或多个it块。
 describe('加法函数的测试', function() {

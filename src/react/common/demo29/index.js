@@ -1,47 +1,47 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class LikeButton extends Component {
-	constructor () {
-		super();
-		this.state = {isLiked: false}
-	}
+  constructor () {
+    super();
+    this.state = { isLiked: false }
+  }
 
-	handleClickOnLikeButton () {
-		this.setState({
-			isLiked: !this.state.isLiked
-		})
-	}
+  handleClickOnLikeButton () {
+    this.setState({
+      isLiked: !this.state.isLiked
+    })
+  }
 
-	render () {
+  render () {
 		
-		return (
+    return (
 			<button onClick={this.handleClickOnLikeButton.bind(this)} >
 				
 				{this.state.isLiked ? this.props.likedText : this.props.unlikedText}
 			</button>
-		)
-	}
+    )
+  }
 }
 
 
 class Index extends Component {
-    constructor () {
+  constructor () {
 	    super()
 	    this.state = {
 	      likedText: '已赞初始的lalaaaaaaaaaaaaaaaaaaaa',
 	      unlikedText: '赞初始的laaaaaaaaaaaaaaaaaaa'
 	    }
-    }
+  }
 
-	handleClickOnChange () {
+  handleClickOnChange () {
 	    this.setState({
 	      likedText: '取消改变后wwwwwwwwwwww',
 	      unlikedText: '点赞改变后wwwwwwwwwwwwww'
 	    })
-	}
+  }
 
-	render () {
+  render () {
 	    return (
 	        <div>
 		        <LikeButton
@@ -54,7 +54,7 @@ class Index extends Component {
 		        </div>
 	      </div>
 	    )
-	}
+  }
 }
 
 ReactDOM.render(

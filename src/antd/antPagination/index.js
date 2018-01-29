@@ -5,43 +5,43 @@ import { Pagination } from 'antd';
 
 
 let body = {
-	width: '800px',
-	margin: '20px auto'
+  width: '800px',
+  margin: '20px auto'
 }
-let we ={
-	border: '2px solid #800080',
-	padding: '10px',
+let we = {
+  border: '2px solid #800080',
+  padding: '10px',
 	// textAlign: 'center'
 }
 
 
 class Page extends Component {
-	constructor() {
-		super();
-		this.state = {
+  constructor() {
+    super();
+    this.state = {
     		current: 3,
   		}
-		this.onShowSizeChange = this.onShowSizeChange.bind(this);
-		this.onChange = this.onChange.bind(this);
-		this.onChange2 = this.onChange2.bind(this);
-	}
-	onShowSizeChange (current, pageSize) {
+    this.onShowSizeChange = this.onShowSizeChange.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onChange2 = this.onChange2.bind(this);
+  }
+  onShowSizeChange (current, pageSize) {
 	   console.log('第3个div中的current: ',current);
 	   console.log('第3个div中的pageSize: ',pageSize);
 	   // console.log(current, pageSize);
-	}
-	onChange (pageNumber) {
+  }
+  onChange (pageNumber) {
   		console.log('第4个div中的Page: ', pageNumber);
-	}
-	onChange2 (page) {
+  }
+  onChange2 (page) {
 	    console.log("第5个div中的page:",page);
 	    this.setState({
 	        current: page,
 	    });
-	}
+  }
 
-	render() {
-		return (
+  render() {
+    return (
 			<div style={body}>
 				<div style={we}>
 					<Pagination defaultCurrent={1} total={50} />
@@ -73,8 +73,8 @@ class Page extends Component {
 					/>
 				</div>
 			</div>
-		);
-	}
+    );
+  }
 }
 
 

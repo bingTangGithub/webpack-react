@@ -4,26 +4,26 @@ import ReactDOM from 'react-dom';
 // import Button from 'antd/lib/button';
 // import 'antd/lib/button/style';
 
-import { Row, Col, Slider} from 'antd';
+import { Row, Col, Slider } from 'antd';
 import  './grid.css';
 
 const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
 
 let body = {
-	width: '800px',
-	margin: '20px auto'
+  width: '800px',
+  margin: '20px auto'
 }
-let we ={
-	border: '2px solid #800080',
-	padding: '10px',
+let we = {
+  border: '2px solid #800080',
+  padding: '10px',
 	// textAlign: 'center'
 }
 
 class Grid extends Component {
-	gutters = {};
-    colCounts = {};
+  gutters = {};
+  colCounts = {};
 
-	constructor() {
+  constructor() {
 	    super();
 	    this.state = {
 	        gutterKey: 1,
@@ -36,19 +36,19 @@ class Grid extends Component {
 	    console.log(this.colCounts);
 	    console.log(Object.keys(this.gutters).length - 1);
 
-		onGutterChange = (gutterKey) => {
+    onGutterChange = (gutterKey) => {
     		this.setState({ gutterKey });
     	}
 
-		onColCountChange = (colCountKey) => {
+    onColCountChange = (colCountKey) => {
 		    this.setState({ colCountKey });
-		}
-	}
+    }
+  }
 
     
 
 
-    render() {
+  render() {
     	const { gutterKey, colCountKey } = this.state;
 	    const cols = [];
 	    const colCount = this.colCounts[colCountKey];
@@ -83,25 +83,25 @@ class Grid extends Component {
 				</div>
 				<br />
 
-				<div  style={we} className="gutter-example">
+				<div  style={we} className='gutter-example'>
 				    <Row gutter={16}>
-				      <Col className="gutter-row" span={6}>
-				        <div className="gutter-box">col-6</div>
+				      <Col className='gutter-row' span={6}>
+				        <div className='gutter-box'>col-6</div>
 				      </Col>
-				      <Col className="gutter-row" span={6}>
-				        <div className="gutter-box">col-6</div>
+				      <Col className='gutter-row' span={6}>
+				        <div className='gutter-box'>col-6</div>
 				      </Col>
-				      <Col className="gutter-row" span={6}>
-				        <div className="gutter-box">col-6</div>
+				      <Col className='gutter-row' span={6}>
+				        <div className='gutter-box'>col-6</div>
 				      </Col>
-				      <Col className="gutter-row" span={6}>
-				        <div className="gutter-box">col-6</div>
+				      <Col className='gutter-row' span={6}>
+				        <div className='gutter-box'>col-6</div>
 				      </Col>
 				    </Row>
 				</div>
 				<br />
 
-				<div  style={we} className="offset">
+				<div  style={we} className='offset'>
 				    <Row >
 				      <Col  span={8}>col-8</Col>
 				      <Col  span={8} offset={8}>col-8</Col>
@@ -126,7 +126,7 @@ class Grid extends Component {
 
 				<div  style={we}>
 				    <p>sub-element align left</p>
-				    <Row type="flex" justify="start">
+				    <Row type='flex' justify='start'>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
@@ -134,7 +134,7 @@ class Grid extends Component {
 				    </Row>
 
 				    <p>sub-element align center</p>
-				    <Row type="flex" justify="center">
+				    <Row type='flex' justify='center'>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
@@ -142,7 +142,7 @@ class Grid extends Component {
 				    </Row>
 
 				    <p>sub-element align right</p>
-				    <Row type="flex" justify="end">
+				    <Row type='flex' justify='end'>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
@@ -150,7 +150,7 @@ class Grid extends Component {
 				    </Row>
 
 				    <p>sub-element monospaced arrangement</p>
-				    <Row type="flex" justify="space-between">
+				    <Row type='flex' justify='space-between'>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
@@ -158,7 +158,7 @@ class Grid extends Component {
 				    </Row>
 
 				    <p>sub-element align full</p>
-				    <Row type="flex" justify="space-around">
+				    <Row type='flex' justify='space-around'>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
 				      <Col span={4}>col-4</Col>
@@ -169,14 +169,14 @@ class Grid extends Component {
 
 				<div style={we}>
 				    <p>Align Top</p>
-				    <Row type="flex" justify="center" align="top">
+				    <Row type='flex' justify='center' align='top'>
 				      <Col span={4}><DemoBox value={100}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={50}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={120}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={80}>col-4</DemoBox></Col>
 				    </Row>
 				    <p>Align Center</p>
-				    <Row type="flex" justify="space-around" align="middle">
+				    <Row type='flex' justify='space-around' align='middle'>
 				      <Col span={4}><DemoBox value={100}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={50}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={120}>col-4</DemoBox></Col>
@@ -184,7 +184,7 @@ class Grid extends Component {
 				    </Row>
 
 				    <p>Align Bottom</p>
-				    <Row type="flex" justify="space-between" align="bottom">
+				    <Row type='flex' justify='space-between' align='bottom'>
 				      <Col span={4}><DemoBox value={100}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={50}>col-4</DemoBox></Col>
 				      <Col span={4}><DemoBox value={120}>col-4</DemoBox></Col>

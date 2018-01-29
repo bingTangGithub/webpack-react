@@ -2,12 +2,12 @@
 // import React, { Component} from 'react';
 // import ReactDOM from 'react-dom';
 
-//方案一
+// 方案一
 // import BaiduUtil from './baiduUtil.jsx';
 // BaiduUtil('https://user.qzone.qq.com/1569025161/infocenter');
 
 
-//方案二
+// 方案二
 // import simpleUtil from './simpleUtil.jsx';
 // var _hmt = _hmt || [];
 // (function() {
@@ -19,13 +19,13 @@
 // })();
 
 
-//方案三
+// 方案三
 // import BaiduUtilES6 from './baiduUtilES6.jsx';
 // BaiduUtilES6.genStatistics('https://user.qzone.qq.com/1569025161/infocenter');
 
-//方案四
+// 方案四
 
-import {BaiduUtil} from '@xinguang/common-tool';
+import { BaiduUtil } from '@xinguang/common-tool';
 BaiduUtil.genStatistics('https://sjyx.xinguang.com');
 console.log(BaiduUtil.genStatistics('https://user.qzone.qq.com/1569025161/infocenter'));
 

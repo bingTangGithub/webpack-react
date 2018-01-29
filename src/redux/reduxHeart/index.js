@@ -32,7 +32,7 @@ function todos(state = [], action) {
 // }
 let reducer = combineReducers({ visibilityFilter, todos })
 
-//创建 Redux store 来存放应用的状态。
+// 创建 Redux store 来存放应用的状态。
 // let store = createStore(todoApp);
 let store = createStore(reducer);
 

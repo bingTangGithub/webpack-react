@@ -1,13 +1,13 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import  MyFormItem from '../commonTool/components/FormItemComponent/index.jsx';
 // import Util from '../commonTool/extend/Util.jsx';
 class App extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			addFormItemData: [
+  constructor(props) {
+    super(props);
+    this.state = {
+      addFormItemData: [
 		        {
 		          label: '门店',
 		          id: 'storeId',
@@ -69,10 +69,10 @@ class App extends Component {
 		    ],
 
 
-		}
-	}
+    }
+  }
 
-	genSelectOptions = (count = 20) => {
+  genSelectOptions = (count = 20) => {
 	    let result = [];
 	    for (let i = 0; i < count; i++) {
 	      result.push(
@@ -80,32 +80,32 @@ class App extends Component {
 	      );
 	    }
 	    return result;
-	};
+  };
 
-	componentDidMount() {
-		let {
+  componentDidMount() {
+    let {
 			addFormItemData,
 		} = this.state;
-		let treeDataMock = 
-			[
-				{
-					label: "社区店",
-					value: "area_shequ",
-					key: "0-0",
-					children: [
-						{
-							label: "社区店",
-							value: "area_shequ",
-							key: "0-0-1",
-						},
+    let treeDataMock = 
+      [
+        {
+          label: "社区店",
+          value: "area_shequ",
+          key: "0-0",
+          children: [
+            {
+              label: "社区店",
+              value: "area_shequ",
+              key: "0-0-1",
+            },
 						
-					],
-				},
-			];
+          ],
+        },
+      ];
 
-		let newObj = Object.assign({}, addFormItemData[0], {treeData: treeDataMock});
-		this.setState({
-			addFormItemData: [
+    let newObj = Object.assign({}, addFormItemData[0], { treeData: treeDataMock });
+    this.setState({
+      addFormItemData: [
 		        newObj,
 		        addFormItemData[1],
 		        addFormItemData[2],
@@ -114,21 +114,21 @@ class App extends Component {
 		        addFormItemData[5],
 		        addFormItemData[6],
 		    ],
-		}, () => {console.log('addFormItemData:', addFormItemData)});
+    }, () => {console.log('addFormItemData:', addFormItemData)});
 		
-	}
+  }
      
-    handleSubmit = () => {
-       alert("123");
-    }
+  handleSubmit = () => {
+    alert("123");
+  }
 
-	render() {
-		return (
+  render() {
+    return (
 			<div>
 				<MyFormItem formItemData = {this.state.addFormItemData} handleSubmit={this.handleSubmit}/>
 			</div>
-		)
-	}
+    )
+  }
 }
 
 

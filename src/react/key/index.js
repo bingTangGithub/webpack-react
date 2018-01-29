@@ -2,9 +2,9 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 
-var arr = [
-	<h1 key={0}>Hello world!</h1>,
-	<h2 key={1}>React is awesome</h2>
+let arr = [
+  <h1 key={0}>Hello world!</h1>,
+  <h2 key={1}>React is awesome</h2>
 ];
 
 ReactDOM.render(

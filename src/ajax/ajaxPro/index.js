@@ -1,10 +1,10 @@
 import $ from 'jquery';
 
-$(function(){
-	$("#send").click(function(){
-		console.log('点击');
-		$('#resText').load('./$load.html');
-	})
+$(function() {
+  $("#send").click(function() {
+    console.log('点击');
+    $('#resText').load('./$load.html');
+  })
 
 
 

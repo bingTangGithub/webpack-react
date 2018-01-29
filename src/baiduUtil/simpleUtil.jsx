@@ -1,28 +1,28 @@
 
 export default function  (web) {
-    var web = web; 
-    var domainId;  
-    var idname = [
-                    {
-                        domain: 'bingtanggithub.github.io',
-                        id: '013eeddbba92797f0529dcc066d91a44'
-                    }, //我的博客
-                    {
-                        domain: 'user.qzone.qq.com/1569025161/infocenter',
-                        id: '593440c1b190e9b67f240ce3e1ee537c'
-                    }, //qq空间
-                    {
-                        domain: 'sjyx.xinguang.com',
-                        id: '9bb005298bfaa0db19d6b3e84688da74'
-                    } //四季严选
-                ];
+  var web = web; 
+  let domainId;  
+  let idname = [
+    {
+      domain: 'bingtanggithub.github.io',
+      id: '013eeddbba92797f0529dcc066d91a44'
+    }, // 我的博客
+    {
+      domain: 'user.qzone.qq.com/1569025161/infocenter',
+      id: '593440c1b190e9b67f240ce3e1ee537c'
+    }, // qq空间
+    {
+      domain: 'sjyx.xinguang.com',
+      id: '9bb005298bfaa0db19d6b3e84688da74'
+    } // 四季严选
+  ];
 
-    for (let i=0; i<idname.length; i++) {
-            if (web.indexOf(idname[i].domain) != -1) {
-                domainId = idname[i].id;
-            }
+  for (let i = 0; i < idname.length; i++) {
+    if (web.indexOf(idname[i].domain) != -1) {
+      domainId = idname[i].id;
     }
-    return domainId;
+  }
+  return domainId;
 }
 
 

@@ -43,12 +43,12 @@ class MyForm  extends Component {
   		labelCol: { span: 4 }, // 蒙版上表单规格 距离左边的距离
     	wrapperCol: { span: 12 }, // input的宽度
     	listExpendTypeSelectOption: [],  // 支出类型数组
-    	pageSize: 10, //每页大小
+    	pageSize: 10, // 每页大小
     	pageNo: 0, 
     	expendType: [
-    		{text: '房屋租金', value: '房屋租金',},
-    		{text: '物业费', value: '物业费',},
-    		{text: '维修费', value: '维修费',},
+    		{ text: '房屋租金', value: '房屋租金', },
+    		{ text: '物业费', value: '物业费', },
+    		{ text: '维修费', value: '维修费', },
     	],
   		label: {  	
 		    storeNameLabel: '门店',
@@ -75,12 +75,12 @@ class MyForm  extends Component {
 	    	}
 	          
        
-        },
-    	size: 'default', //时间控件大小
+    },
+    	size: 'default', // 时间控件大小
   	}
   }
 
-    handleSubmit = (e) => {
+  handleSubmit = (e) => {
     	console.log('form中的submit');
   		let form = this.props.form;
   		let { recordItem } = this.state;
@@ -119,7 +119,7 @@ class MyForm  extends Component {
 	    });
   	}
 
-//向接口发送数据
+// 向接口发送数据
   	requestInfo = () => {
     	const that = this;
     	let { pageSize, pageNo } = this.state;
@@ -158,7 +158,7 @@ class MyForm  extends Component {
   		}
   		console.log('the last::::', parm.data);
   		this.reloadTableList();
-	    //刷新页面
+	    // 刷新页面
   	}
 
   	reloadTableList = () => {
@@ -169,7 +169,7 @@ class MyForm  extends Component {
 	    let { expendType } = this.state;
 	    let expendTypeLen = expendType.length;
 	    this.genOption(expendTypeLen);
-    }
+  }
 
   	genOption = (value) => {
   		let { expendType, listExpendTypeSelectOption } = this.state;
@@ -181,7 +181,7 @@ class MyForm  extends Component {
 	    this.setState({
 	      listExpendTypeSelectOption,
 	    });
-    }
+  }
 
 
   render() {
@@ -242,7 +242,7 @@ class MyForm  extends Component {
 	          {getFieldDecorator('expirationDays', { 
 	            rules: [{ required: true, message: `${expirationDaysLabel}${messageEmpty}!`, },],
 	          })(
-	          	<RangePicker size={size} style = {{width:'100%'}} />
+	          	<RangePicker size={size} style = {{ width:'100%' }} />
 	          )}
         </FormItem>
         <FormItem
@@ -253,7 +253,7 @@ class MyForm  extends Component {
 	          {getFieldDecorator('paymentDate', { 
 	            rules: [{ required: true, message: `${paymentDateLabel}${messageEmpty}!`, },],
 	          })(
-	            <DatePicker size={size} style = {{width:'100%'}} />
+	            <DatePicker size={size} style = {{ width:'100%' }} />
 	          )}
         </FormItem>
         <FormItem
@@ -312,7 +312,7 @@ class App extends Component {
 				    title: '支出说明',
 				    dataIndex: 'remark',
 				  }],
-		};
+  };
  	}
 
   componentDidMount () {

@@ -1,6 +1,6 @@
 
 
-//no1.  （require引入ES6  模块）
+// no1.  （require引入ES6  模块）
 // var es_namespace = require('./lib.js');
 // console.log(es_namespace.default.bar);
 

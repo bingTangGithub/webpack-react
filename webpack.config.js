@@ -40,7 +40,7 @@ module.exports = {
         // build29 : "./src/react/demo29/index.js",
         // build30 : "./src/react/demo30/index.js",
         // build31 : "./src/react/demo31/index.js",
-        build32 : "./src/react/faAndSon/sonUseFa/index.js",
+        // build32 : "./src/react/faAndSon/sonUseFa/index.js",
         // build33 : "./src/react/faUseSon/index.js",
         // build34 : "./src/react/faRenderFirst/index.js",
         // build35 : "./src/react/demo35/index.js",
@@ -67,7 +67,7 @@ module.exports = {
         // build56 : "./src/react/liGen/index.js",  
         // build57 : "./src/antd/antFormJiPeiMine/index.jsx", //有scss文件的 
         // build58 : "./src/antd/antFormJiPeiTable/index.jsx", 
-        // build59 : "./src/antd/antFormJiPeiMineFormItem/index.jsx", 
+        build59 : "./src/antd/antFormJiPeiMineFormItem/index.jsx", 
         // build60 : "./src/antd/antFormSetstate/index.jsx", 
         // build61 : "./src/jieGou/index.jsx", 
         // build62 : "./src/antd/antTreeSelect/index.jsx",
@@ -80,13 +80,29 @@ module.exports = {
         // build69 : "./src/project/myForm/index.js", 
         // build70 : "./src/project/myForm/component/index.jsx", 
         // build71 : "./src/ES6/threeDian/index.jsx", 
-        build72 : "./src/react/faAndSon/faVsSon/index.jsx"   // 重改目录之后的
+        // build72 : "./src/react/faAndSon/faVsSon/index.jsx",  // 重改目录之后的
+        // build73 : "./src/ES6/jiantou/index.jsx", 
+        // build74 : "./src/antd/antv/chart/oneLine/index.jsx", 
+        // build75 : "./src/antd/antv/chart/twoLine/index.jsx", 
+        // build76 : "./src/antd/antv/chart/twoShi/index.jsx", 
+        // build77 : "./src/antd/antv/chart/project/index.jsx", 
+        // build78 : "./src/react/lqbz/kuaYu", 
+        // build79 : "./src/antd/antv/chart/project/index.jsx", 
+        // build80 : "./src/router/url/index.jsx", 
+        // build81 : "./src/router/customLink/index.jsx", 
+        // build82 : "./src/router/routerPeiZhi/index.jsx", 
+        // build83 : "./src/router/redirects/index.jsx", 
+        build84 : "./src/project/yiBu/index.js", 
+        build85 : "./src/project/promise/index.js", 
     },
     //入口文件输出配置
     output : {
         // path : './build/',
-        path : __dirname,
-        filename : '[name].js'
+        path : __dirname,  // 打包后的文件存放的地方
+        filename : '[name].js'  // 打包后输出的文件的文件名
+    },
+    node: {
+        fs: "empty",
     },
     module: {
         preLoaders: [{
@@ -119,7 +135,9 @@ module.exports = {
             //       cacheDirectory: true
             //     }
             // },
-            {test: /\.css$/, loader: 'style-loader!css-loader' },
+            // {test: /\.css$/, loader: 'style-loader!css-loader' },
+            {test: /\.css$/,  loader: 'style!css?modules!postcss' },
+
             {test: /\.scss$/i, loader:ExtractTextPlugin.extract('style-loader','css!sass')},
 
             // 三个loader将scss文件转化为css文件，然后将css文件从js中抽取出来
@@ -128,6 +146,9 @@ module.exports = {
             //超过8kb的才使用 url-loader来影射到文件，否则转化为 base64形式  
         ]
     },
+    postcss: [
+       require('autoprefixer')
+    ],
     plugins: [
         new ExtractTextPlugin("[name].css",{
             allchunks:true

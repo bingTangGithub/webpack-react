@@ -32,24 +32,24 @@ class App extends React.Component {
       <Form onSubmit={this.handleSubmit}>
 	      <FormItem
 	          // label="Gender"
-	          label="支出类型"
+	          label='支出类型'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
 	          {getFieldDecorator('支出类型', {
 	          	// initialValue: '采购123',
-	            rules: [{ required: true}],
+	            rules: [{ required: true }],
 	            onChange: this.handleSelectChange,
 	          })(
 	            <Select>
-	              <Option value="male">采购</Option>
-	              <Option value="female">维修</Option>
+	              <Option value='male'>采购</Option>
+	              <Option value='female'>维修</Option>
 	            </Select>
 	          )}
 	        </FormItem>
 
 	        <FormItem
-	          label="物资名称"
+	          label='物资名称'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
@@ -61,7 +61,7 @@ class App extends React.Component {
 	        </FormItem>
 	        
 	         <FormItem
-	          label="品牌"
+	          label='品牌'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
@@ -73,7 +73,7 @@ class App extends React.Component {
 	        </FormItem>
 
 	         <FormItem
-	          label="型号"
+	          label='型号'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
@@ -85,7 +85,7 @@ class App extends React.Component {
 	        </FormItem>
 
 	        <FormItem
-	          label="单价"
+	          label='单价'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
@@ -97,7 +97,7 @@ class App extends React.Component {
 	        </FormItem>
 
 	        <FormItem
-	          label="折旧率"
+	          label='折旧率'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
@@ -109,30 +109,30 @@ class App extends React.Component {
 	        </FormItem>
 
 	        <FormItem
-	          label="数量"
+	          label='数量'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
 	          {getFieldDecorator('数量', {
 	          	initialValue: 3 ,
-	            rules: [{ required: true}],
+	            rules: [{ required: true }],
 	            onChange: this.handleSelectChange,
 	          })(
 	            <Select value>
-	              <Option value="1">1</Option>
-	              <Option value="2">2</Option>
-	              <Option value="3">3</Option>
-	              <Option value="4">4</Option>
-	              <Option value="5">5</Option>
-	              <Option value="6">6</Option>
-	              <Option value="7">7</Option>
-	              <Option value="8">8</Option>
+	              <Option value='1'>1</Option>
+	              <Option value='2'>2</Option>
+	              <Option value='3'>3</Option>
+	              <Option value='4'>4</Option>
+	              <Option value='5'>5</Option>
+	              <Option value='6'>6</Option>
+	              <Option value='7'>7</Option>
+	              <Option value='8'>8</Option>
 	            </Select>
 	          )}
 	        </FormItem>
 
 	         <FormItem
-	          label="编号1"
+	          label='编号1'
 	          labelCol={{ span: 4 }}
 	          wrapperCol={{ span: 8 }}
 	        >
@@ -146,7 +146,7 @@ class App extends React.Component {
 	        <FormItem
 	          wrapperCol={{ span: 8, offset: 4 }}
 	        >
-	          <Button type="primary" htmlType="submit" style={{ backgroundColor: '#FFE000',color: 'rgba(0, 0, 0, 0.65)' ,border: 'none'}}>
+	          <Button type='primary' htmlType='submit' style={{ backgroundColor: '#FFE000',color: 'rgba(0, 0, 0, 0.65)' ,border: 'none' }}>
 	            提交
 	          </Button>
 	        </FormItem>

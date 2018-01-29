@@ -2,28 +2,23 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 
-var names = ['Alice','Emily','Kate'];
+let names = ['Alice','Emily','Kate'];
 
-var myStyle = {
-	fontSize: 100,
-	color: '#FF0000'
+let myStyle = {
+  fontSize: 100,
+  color: '#FF0000'
 };
 
 
 ReactDOM.render(
 	<div>
-	    {
-	 
-			names.map(function (name,i) {
-				return <div style={myStyle} key={i} >Hello, {name}!</div>
-						
-			})
+	  {
+	    names.map(function (name,i) {
+      return (<div style={myStyle} key={i} >Hello, {name}!</div>)
+    })
 		}
-			
-	
-		
-	</div>,
-        document.getElementById('example')
+  </div>,
+  document.getElementById('example')
 );
 
 //  map() 方法返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。

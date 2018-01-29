@@ -2,18 +2,18 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 
-var HelloMessage = React.createClass({
-	render: function(){
-		return (
+let HelloMessage = React.createClass({
+  render: function() {
+    return (
 			<div>
 				<h1>Hello {this.props.name}</h1>  
 				<h1>Hello {this.props.name}</h1>
 			</div>
-			);
-	}
+    );
+  }
 });
 
-var names = ['Alice','Emily','Kate'];
+let names = ['Alice','Emily','Kate'];
 
 ReactDOM.render(
 
@@ -22,8 +22,8 @@ ReactDOM.render(
 		<HelloMessage name='wxl2' />
 	{
 		names.map(function (name) {
-			return <HelloMessage name={name} />
-		}) 	
+  return <HelloMessage name={name} />
+}) 	
 	}
 	</div>,
 

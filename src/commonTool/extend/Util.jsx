@@ -20,8 +20,8 @@ export default class Util {
       }
 
       if (obj instanceof RegExp) {
-        var pattern = obj.valueOf();
-        var flags = '';
+        let pattern = obj.valueOf();
+        let flags = '';
         flags += pattern.global ? 'g' : '';
         flags += pattern.ignoreCase ? 'i' : '';
         flags += pattern.multiline ? 'm' : '';

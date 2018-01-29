@@ -2,8 +2,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 
- var WebSite = React.createClass({
- 	//getInitialState 方法用于定义初始状态，也就是一个对象，
+let WebSite = React.createClass({
+ 	// getInitialState 方法用于定义初始状态，也就是一个对象，
  	getInitialState: function() {
  		return {
  			name: '菜鸟教程',
@@ -20,23 +20,23 @@ const ReactDOM = require('react-dom');
  			</div>
  		);
  	}
- });
+});
 
- var Name = React.createClass({
+let Name = React.createClass({
  	render: function() {
  		return (
  			<h1>{this.props.name}</h1>
  		);
  	}
- });
+});
 
- var Link = React.createClass({
+let Link = React.createClass({
  	render: function() {
  		return (
  			<a href={this.props.site}>{this.props.site}</a>
  		);
  	}
- });
+});
 
 
 

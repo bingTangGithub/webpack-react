@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 
-import { Form, Select, Input, Button, Modal,} from 'antd';
+import { Form, Select, Input, Button, Modal, } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -88,7 +88,7 @@ class App extends Component {
 
           // let prdtInfo = prdtInfoHook(result);
 
-      	let {depreciationRate, goodsBrand, goodsModel, goodsName, goodsNum, goodsPrice, } = result;
+      	let { depreciationRate, goodsBrand, goodsModel, goodsName, goodsNum, goodsPrice, } = result;
           this.setState({
             expendType: goodsModel,
             materialsLabel: goodsName,
@@ -113,18 +113,18 @@ class App extends Component {
     // RequestUtil.fetch(param);
   }
 
-	success = () => {
+  success = () => {
 	  Modal.success({
 	    title: 'This is a success message',
 	    content: '恭喜,提交成功',
 	  });
-	}
-	error = () => {
+  }
+  error = () => {
 	  Modal.error({
 	    title: 'This is an error message',
 	    content: '提交失败',
 	  });
-	}
+  }
 	
 
   	handleSubmit = (e) => {
@@ -146,7 +146,7 @@ class App extends Component {
 	        console.log('要发送的',this.state.purchaseItem.data);
 
 				// this.success();
-				this.error();
+        this.error();
 	      //   // let listAlert = <Button onClick = {this.success} > Success </Button>;
 	      //   let listAlert = '';
 	      //   this.setState({
@@ -174,7 +174,7 @@ class App extends Component {
  	    let { initOptionLen, optionLen } =  this.state ;
 	   this.genInput(initOptionLen);
 	   this.genOption(optionLen);
-	}
+ }
 
   	genInput = (value) => {
 	   let { labelCol, wrapperCol } = this.state;

@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var xlsx = require('node-xlsx');
-var fs = require('fs');
+let express = require('express');
+let router = express.Router();
+let xlsx = require('node-xlsx');
+let fs = require('fs');
 
 // /* GET import excel test. */
 // // router.get('/importExcel', function(req, res, next) {

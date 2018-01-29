@@ -18,24 +18,24 @@ const ComponentMap = {
 	    return (
 				<Input suffix={<span  style={{ fontSize: 13 }} >{props.suffix}</span>} />
 	    )
-    },
-    picker : (props) => {
+  },
+  picker : (props) => {
 	  	let {
 				pickerType,
 			} = props;
 
-		if (pickerType === 'double') {
-			return (
-				<RangePicker  style = {{width:'100%'}} />
+    if (pickerType === 'double') {
+      return (
+				<RangePicker  style = {{ width:'100%' }} />
 	    	)
-		}
+    }
     	if (pickerType === 'single') {
-			return (
-				<DatePicker  style = {{width:'100%'}} />
+      return (
+				<DatePicker  style = {{ width:'100%' }} />
 	    	)
-		}
-    },
-	select: (props) => {
+    }
+  },
+  select: (props) => {
 	    let {
 				options,
 			} = props;
@@ -51,7 +51,7 @@ const ComponentMap = {
 					{optionsContent}
 				</Select>
 	    )
-	}
+  }
 }
 
 let genSelectOptions = (count = 20) => {
@@ -103,7 +103,7 @@ class MyForm  extends Component {
   		// initInfo: {
   			pageSize: 10, // 每页大小
     		pageNo: 0, 
-        storeIdsList: '',
+    storeIdsList: '',
     		messageContent: `数据录入后不能修改，请检查无误后提交。
                          是否确认提交？`,
     	// },
@@ -226,7 +226,7 @@ class MyForm  extends Component {
   	});
   }
 
-    handleSubmit = (e) => {
+  handleSubmit = (e) => {
   		let form = this.props.form;
 	    e.preventDefault();
 	    form.validateFields((err, values) => {
@@ -283,7 +283,7 @@ class MyForm  extends Component {
     };
     console.log('the last::::', parm.data);
     // this.reloadTableList();
-	    //刷新页面
+	    // 刷新页面
   }
 
   	// reloadTableList = () => {
@@ -301,7 +301,7 @@ class MyForm  extends Component {
 	    this.setState({
 	      listExpendTypeSelectOption,
 	    });
-    }
+  }
 
 
   render() {
@@ -337,8 +337,8 @@ class App extends Component {
 	  	super(props);
 	  	this.state = {
         // initInfo: {
-          otherOutcomeDataList: '', // 列表展示数据
-          addOtherOutcomeModal: '',  //  增加时的蒙版
+    otherOutcomeDataList: '', // 列表展示数据
+    addOtherOutcomeModal: '',  //  增加时的蒙版
         // },
      //    otherOutcomeDataList: '', // 列表展示数据
 	  		// addOtherOutcomeModal: '',  //  增加时的蒙版
@@ -371,18 +371,18 @@ class App extends Component {
 				    title: '支出说明',
 				    dataIndex: 'remark',
 				  }],
-		};
+  };
  	}
 
   componentDidMount () {
-      this.getOtherOutcomeData();
+    this.getOtherOutcomeData();
   }
   // submit = () => {
   // 	console.log('蒙版中的submit');
   // }
 
   addExpenditureRecord = () => {
-  console.log('eeeeeeeee:');
+    console.log('eeeeeeeee:');
   	let { 
       // initInfo: {
         addOtherOutcomeModal,
@@ -406,7 +406,7 @@ class App extends Component {
     console.log('addOtherOutcomeModal:',addOtherOutcomeModal);
     this.setState({
     	 // initInfo: {
-        addOtherOutcomeModal,
+      addOtherOutcomeModal,
         // otherOutcomeDataList,
       // },
     })
@@ -449,21 +449,21 @@ class App extends Component {
     // };
     // RequestUtil.fetch(param);
     otherOutcomeDataList = [{
-        key: '1',
-        storeName: '永裕大厦店',
-        otherOutcomeType: '物业费',
-        price: '720.0',
-        startDate: '2016.10.7',
-        endDate: '2017.4.7',  // 到期时间
-        paymentDate: '2017.10.7', // 缴费日期
-        expirationDays: '12', // 有效期
-        outcomeAvg: '4.00',
-        remark: ' 1.2元/平米/月',
-      },];
+      key: '1',
+      storeName: '永裕大厦店',
+      otherOutcomeType: '物业费',
+      price: '720.0',
+      startDate: '2016.10.7',
+      endDate: '2017.4.7',  // 到期时间
+      paymentDate: '2017.10.7', // 缴费日期
+      expirationDays: '12', // 有效期
+      outcomeAvg: '4.00',
+      remark: ' 1.2元/平米/月',
+    },];
     this.setState({
       // initInfo:{
         // addOtherOutcomeModal,
-        otherOutcomeDataList,
+      otherOutcomeDataList,
       // },
     })
   }
@@ -489,7 +489,7 @@ class App extends Component {
 			    footer={() => 'Footer'}
 				/>
 				{addOtherOutcomeModal}
-        <Button type="primary" onClick={this.exportExpenditureRecord}>Primary</Button>
+        <Button type='primary' onClick={this.exportExpenditureRecord}>Primary</Button>
 			</div>
     )
   }

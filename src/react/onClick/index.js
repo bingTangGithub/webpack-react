@@ -2,23 +2,23 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const $ = require('jquery');
 
- var HelloMessage = React.createClass({
+let HelloMessage = React.createClass({
  	getInitialState: function() {
- 		return {value: 'Hello Runoob'};
+ 		return { value: 'Hello Runoob' };
  	},
  	handleChange: function(event) {
- 		this.setState({value: '菜鸟教程'})
+ 		this.setState({ value: '菜鸟教程' })
  	},
  	render: function() {
- 		var value = this.state.value;
- 		return(
+ 		let value = this.state.value;
+ 		return (
  			<div>
  				<button onClick={this.handleChange}>点我</button>
  				<h4>{value}</h4>
  			</div>
  		);
  	}
- });
+});
 
 // 通过 onClick 事件来修改数据
 

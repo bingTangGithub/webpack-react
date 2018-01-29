@@ -1,4 +1,4 @@
-let foo = {bar: 'my-default'};
+let foo = { bar: 'my-default' };
 export default foo;
 foo = null;
 
