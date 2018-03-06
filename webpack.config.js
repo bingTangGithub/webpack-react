@@ -67,7 +67,7 @@ module.exports = {
         // build56 : "./src/react/liGen/index.js",  
         // build57 : "./src/antd/antFormJiPeiMine/index.jsx", //有scss文件的 
         // build58 : "./src/antd/antFormJiPeiTable/index.jsx", 
-        build59 : "./src/antd/antFormJiPeiMineFormItem/index.jsx", 
+        // build59 : "./src/antd/antFormJiPeiMineFormItem/index.jsx", 
         // build60 : "./src/antd/antFormSetstate/index.jsx", 
         // build61 : "./src/jieGou/index.jsx", 
         // build62 : "./src/antd/antTreeSelect/index.jsx",
@@ -92,8 +92,9 @@ module.exports = {
         // build81 : "./src/router/customLink/index.jsx", 
         // build82 : "./src/router/routerPeiZhi/index.jsx", 
         // build83 : "./src/router/redirects/index.jsx", 
-        build84 : "./src/project/yiBu/index.js", 
-        build85 : "./src/project/promise/index.js", 
+        // build84 : "./src/project/yiBu/index.js", 
+        // build85 : "./src/project/promise/index.js", 
+        build86 : "./src/project/extends/index.jsx", 
     },
     //入口文件输出配置
     output : {
