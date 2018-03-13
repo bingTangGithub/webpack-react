@@ -6,5 +6,11 @@
     ],
     "plugins": [
     	 ['import', [{ libraryName: "antd", style: true }]],
+       ["transform-imports",{
+        "@xinguang/common-tool":{
+          "transform":"@xinguang/common-tool/lib/${member}",
+          "preventFullImport":true
+        }
+      }]
     ]
  }
