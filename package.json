@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@xinguang/common-tool": "^1.1.19",
     "babel-plugin-transform-imports": "^1.4.1",
     "antd": "^2.9.1",
     "autoprefixer": "^7.1.2",
