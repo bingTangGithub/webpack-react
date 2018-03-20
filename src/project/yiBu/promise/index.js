@@ -1,4 +1,4 @@
-// 在浏览器环境下运行，而非 node 环境， deffer 对象转化为 promise 对象
+// 在浏览器环境下运行，而非 node 环境， deferred 对象转化为 promise 对象
 // cosnt jsPromise = Promise.resolve($.ajax('/whatever.json'))
 // jsPromise.then(data => {
 //     // ...
@@ -46,7 +46,6 @@
 
 // ================================
 
-
 const fs = require('fs');
 const path  = require('path');
 const readFilePromise = (fileName) => {
@@ -54,7 +53,7 @@ const readFilePromise = (fileName) => {
     fs.readFile(fileName, (err, data) => {
       if (err) {
         reject(err); // 注意，这里执行 reject 是传递了参数，后面会有地方接收到这个参数
-      } else {
+      } else { 
         // console.log('读取文件后的data是：：：：：：', data, typeof data);
         console.log('读取文件后的data.toString()是：：：：：：', data.toString());
         resolve(data.toString()); // 注意，这里执行 resolve 时传递了参数，后面会有地方接收到这个参数
@@ -65,7 +64,7 @@ const readFilePromise = (fileName) => {
 
 // ================================
 
-// const fullFileName = path.resolve(__dirname, './data1.json');
+// const fullFileName = path.resolve(__dirname, '../data1.json');
 // const result = readFilePromise(fullFileName);
 
 // console.log('result:::::::::::', result);
@@ -86,9 +85,9 @@ const readFilePromise = (fileName) => {
 
 // 串联多个异步操作
 // 需求： 先读取data2.json的内容，当成功之后，再去读取data1.json。
-const fullFileName2 = path.resolve(__dirname, './data2.json')
+const fullFileName2 = path.resolve(__dirname, '../data2.json')
 const result2 = readFilePromise(fullFileName2)
-const fullFileName1 = path.resolve(__dirname, './data1.json')
+const fullFileName1 = path.resolve(__dirname, '../data1.json')
 const result1 = readFilePromise(fullFileName1)
 
 

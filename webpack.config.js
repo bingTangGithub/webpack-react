@@ -92,9 +92,10 @@ module.exports = {
         // build81 : "./src/router/customLink/index.jsx", 
         // build82 : "./src/router/routerPeiZhi/index.jsx", 
         // build83 : "./src/router/redirects/index.jsx", 
-        // build84 : "./src/project/yiBu/index.js", 
-        // build85 : "./src/project/promise/index.js", 
-        build86 : "./src/project/extends/index.jsx", 
+        // build84 : "./src/project/yiBu/jQuery/index.js", 
+        build85 : "./src/project/yiBu/promise/index.js", 
+        // build86 : "./src/project/extends/index.jsx", 
+        build87 : "./src/project/yiBu/async/index.js", 
     },
     //入口文件输出配置
     output : {

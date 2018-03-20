@@ -2,8 +2,8 @@ require('../../commonTool/jquery.js'); // 1.4.2 版本
 const $1 = $;
 
 // const $1 = require('../../commonTool/jquery.js') ;
-console.log('$1::::::', $1);
-// 
+// console.log('$1::::::', $1);
+ 
 import $2 from '../../commonTool/jquery.2.1.4.min.js';
 
 let ajax1 = $1.ajax({
@@ -40,8 +40,8 @@ function waitHandle() {
   let wait = function (dtd) {  // 要求传入一个 deferred 对象
     let task = function () {
       console.log('执行完成')
-      dtd.resolve()  // 表示异步任务已经完成
-            // dtd.reject()
+      // dtd.resolve()  // 表示异步任务已经完成
+            dtd.reject()
     }
     setTimeout(task, 2000)
     return dtd  // 要求返回 deferred 对象
@@ -53,39 +53,41 @@ function waitHandle() {
 
 
 let w = waitHandle()
-w.reject();  // 这里的 reject 覆盖掉了前边的 resolve
-w.then(function () {
-  console.log('ok 1')
+// w.reject();  // 这里的 reject 覆盖掉了前边的 resolve
+const bbb = w.then(function () {
+  console.log('ok 1?', this)
+  this.fail();
 }, function () {
+  this.done();
   console.log('err 1')
 }).then(function () {
   console.log('ok 2')
 }, function () {
   console.log('err 2')
 })
+// console.log('bbb:;;', bbb.state());
 
+// function waitHandle2() {
+//   let dtd = $2.Deferred()
+//   let wait = function (dtd) {
+//     let task = function () {
+//       console.log('执行完成')
+//       dtd.resolve()
+//     }
+//     setTimeout(task, 2000)
+//     return dtd.promise()  // 注意，这里返回的是 primise 而不是直接返回 deferred 对象
+//   }
+//   return wait(dtd)
+// }
 
-function waitHandle2() {
-  let dtd = $2.Deferred()
-  let wait = function (dtd) {
-    let task = function () {
-      console.log('执行完成')
-      dtd.resolve()
-    }
-    setTimeout(task, 2000)
-    return dtd.promise()  // 注意，这里返回的是 primise 而不是直接返回 deferred 对象
-  }
-  return wait(dtd)
-}
-
-let w2 = waitHandle2() // 经过上面的改动，w 接收的就是一个 promise 对象
-// w2.reject() // w是promise对象，不具备.reject属性。报错
-w2.then(function () {
-  console.log('ok 1')
-})
- .then(function () {
-   console.log('ok 2')
- })
+// let w2 = waitHandle2() // 经过上面的改动，w 接收的就是一个 promise 对象
+// // w2.reject() // w是promise对象，不具备.reject属性。报错
+// w2.then(function () {
+//   console.log('ok 1')
+// })
+//  .then(function () {
+//    console.log('ok 2')
+//  })
 
 
 
