@@ -50,7 +50,7 @@ const fs = require('fs');
 const path  = require('path');
 const readFilePromise = (fileName) => {
   return new Promise((resolve, reject) => {
-    fs.readFile(fileName, (err, data) => {
+    fs.readFile(fileName, (err, data) => { // 这里要用调用 node脚本 的方式 
       if (err) {
         reject(err); // 注意，这里执行 reject 是传递了参数，后面会有地方接收到这个参数
       } else { 
@@ -64,31 +64,31 @@ const readFilePromise = (fileName) => {
 
 // ================================
 
-// const fullFileName = path.resolve(__dirname, '../data1.json');
-// const result = readFilePromise(fullFileName);
+const fullFileName = path.resolve(__dirname, '../data1.json');
+const result = readFilePromise(fullFileName);
 
-// console.log('result:::::::::::', result);
+console.log('result:::::::::::', result);
 
-// // 如果then有链式操作，前面步骤返回的值，会被后面的步骤获取到
-// result.then(data => {
-//   console.log('data::::::::', data);
+// 如果then有链式操作，前面步骤返回的值，会被后面的步骤获取到
+result.then(data => {
+  console.log('data::::::::', data);
 
-//   return JSON.parse(data).a; //  这里将 a 属性的值 return
-// }).then(a => {
-//   console.log('a:::::', a);
-// }).catch(err => {
-//   console.log(err.stack)  // 这里的 catch 就能捕获 readFilePromise 中触发的 reject ，而且能接收 reject 传递的参数
-// })
+  return JSON.parse(data).a; //  这里将 a 属性的值 return
+}).then(a => {
+  console.log('a:::::', a);
+}).catch(err => {
+  console.log(err.stack)  // 这里的 catch 就能捕获 readFilePromise 中触发的 reject ，而且能接收 reject 传递的参数
+})
 // 对于Promise中的异常处理，我们建议用catch方法，而不是then的第二个参数。
 
 // ================================
 
 // 串联多个异步操作
 // 需求： 先读取data2.json的内容，当成功之后，再去读取data1.json。
-const fullFileName2 = path.resolve(__dirname, '../data2.json')
-const result2 = readFilePromise(fullFileName2)
-const fullFileName1 = path.resolve(__dirname, '../data1.json')
-const result1 = readFilePromise(fullFileName1)
+// const fullFileName2 = path.resolve(__dirname, '../data2.json')
+// const result2 = readFilePromise(fullFileName2)
+// const fullFileName1 = path.resolve(__dirname, '../data1.json')
+// const result1 = readFilePromise(fullFileName1)
 
 
 // ================================
@@ -111,6 +111,6 @@ const result1 = readFilePromise(fullFileName1)
 // ================================
 // 并行多个异步操作
 // 读取两个文件data1.json和data2.json，现在我需要一起读取这两个文件，但是只要有一个已经读取了，就可以进行下一步的操作。
-Promise.race([result1, result2]).then(data => {
-  console.log('第一次读到的文件：：：：：', data);
-})
+// Promise.race([result1, result2]).then(data => {
+//   console.log('第一次读到的文件：：：：：', data);
+// })
