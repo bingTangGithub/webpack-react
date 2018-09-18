@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 
 /**
@@ -39,3 +41,40 @@ store.dispatch({ type: 'INCREMENT' });
 // 2
 store.dispatch({ type: 'DECREMENT' });
 // 1
+
+// const Counter = ({ value }) => (
+//   <h1>{value}</h1>
+// );
+
+
+// var Counter = React.createClass({
+//   render: function() {
+//     return <h1>{this.props.value}</h1>;
+//   }
+// });
+
+// class Counter extends Component {
+
+//   render () {
+//     return (
+//       <h1>{this.props.value}</h1>
+//     )
+//   }
+// }
+
+const Counter = ( value ) => {
+  console.log('value::::::', value);
+  return (
+    <h1>{JSON.stringify(value)}</h1>
+  )
+};
+
+const render = () => {
+  ReactDOM.render(
+    <Counter value={store.getState()}  value2= { 222 }/>,
+    document.getElementById('app')
+  );
+};
+
+store.subscribe(render);
+render();

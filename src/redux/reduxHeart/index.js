@@ -3,8 +3,8 @@ import { combineReducers, createStore } from 'redux';
 function visibilityFilter(state = 'SHOW_ALL', action) {
   if (action.type === 'SET_VISIBILITY_FILTER') {
     return action.filter;  
-  } else {
-    return state;
+  // } else {
+  //   return state;
   }
 }
 
@@ -19,8 +19,10 @@ function todos(state = [], action) {
         { text: todo.text, completed: !todo.completed } :
         todo
     )
-  default:
+  default: {
+    console.log('default:::::')
     return state;
+  }
   }
 }
 
@@ -38,11 +40,12 @@ let store = createStore(reducer);
 
 // 可以手动订阅更新，也可以事件绑定到视图层。
 store.subscribe(() =>
-  console.log(store.getState())
+  console.log('store.getState():::::::::::::::::::', store.getState())
 );
 
 // 改变内部 state 惟一方法是 dispatch 一个 action。
-store.dispatch({ type: 'ADD_TODO', text: 'Go to swimming pool' });
-store.dispatch({ type: 'ADD_TODO', text: '第二个 Go to swimming pool' });
-store.dispatch({ type: 'TOGGLE_TODO', index: 1 });
-store.dispatch({ type: 'SET_VISIBILITY_FILTER', filter: 'SHOW_ALLAAA' });
+// store.dispatch({ type: 'ADD_TODO', text: 'Go to swimming pool' });
+store.dispatch({ type: 'ADD_TODO2', text: 'Go to swimming pool' });
+// store.dispatch({ type: 'ADD_TODO', text: '第二个 Go to swimming pool' });
+// store.dispatch({ type: 'TOGGLE_TODO', index: 1 });
+// store.dispatch({ type: 'SET_VISIBILITY_FILTER', filter: 'SHOW_ALLAAA' });

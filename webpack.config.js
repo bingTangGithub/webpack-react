@@ -41,7 +41,7 @@ module.exports = {
         // build30 : "./src/react/demo30/index.js",
         // build31 : "./src/react/demo31/index.js",
         // build32 : "./src/react/faAndSon/sonUseFa/index.js",
-        // build33 : "./src/react/faUseSon/index.js",
+        build33 : "./src/react/faAndSon/faUseSon/index.jsx",
         // build34 : "./src/react/faRenderFirst/index.js",
         // build35 : "./src/react/demo35/index.js",
         // build36 : "./src/baiduUtil/index.js",
@@ -93,9 +93,10 @@ module.exports = {
         // build82 : "./src/router/routerPeiZhi/index.jsx", 
         // build83 : "./src/router/redirects/index.jsx", 
         // build84 : "./src/project/yiBu/jQuery/index.js", 
-        build85 : "./src/project/yiBu/promise/index.js", 
+        // build85 : "./src/project/yiBu/promise/index.js", 
         // build86 : "./src/project/extends/index.jsx", 
-        build87 : "./src/project/yiBu/async/index.js", 
+        // build87 : "./src/project/yiBu/async/index.js", 
+        // build88 : "./src/reactInBook/Button/index.js", 
     },
     //入口文件输出配置
     output : {
@@ -106,6 +107,7 @@ module.exports = {
     node: {
         fs: "empty",
     },
+    devtool: 'inline-source-map',
     module: {
         preLoaders: [{
             test: /\.(js|jsx)$/,
