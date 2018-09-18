@@ -107,7 +107,7 @@ module.exports = {
     node: {
         fs: "empty",
     },
-    devtool: 'inline-source-map',
+    devtool: 'inline-source-map', // 新增了 source-map 配置
     module: {
         preLoaders: [{
             test: /\.(js|jsx)$/,
